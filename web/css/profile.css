@@ -1,0 +1,59 @@
+
+.profile {
+  font-size: 13pt;
+  padding-top: 3.5%;
+}
+
+.profile button {
+  font-size: 11pt;
+}
+
+.profile-header {
+  margin-bottom: 1%;
+  min-width: 600px;
+  max-width: 1080px;
+  min-height: 200px;
+  max-height: 400px;
+}
+
+#profile-title {
+  margin-bottom: 4%;
+}
+
+.profile-avatar {
+  height: 16%;
+  margin-left: 2%;
+}
+
+.profile-head-text {
+  font-size: 14pt;
+  padding-top: 0.8%;
+}
+
+.profile-table {
+  background-color: white;
+  border-radius: 15px;
+  margin: 1% 2% 10% 2%;
+  /** Margin to have white borders table **/
+  padding: 0% 1% 0% 1%;
+  min-width: 660px;
+  max-width: 1080px;
+  min-height: 475px;
+  max-height: 1000px;
+}
+
+.profile-table-title {
+  font-size: 17pt;
+  color: rgb(205, 90, 50);
+  padding-top: 1.8%;
+  padding-left: 1%;
+  padding-right: 4%;
+}
+
+.profile-minilang-block {
+  margin: 35% 3% 18% 3%;
+}
+
+.profile-minilang-entry {
+  padding-top: 3%;
+}

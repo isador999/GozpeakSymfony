@@ -1,0 +1,46 @@
+/***** CSS file for event and idea pages *****/
+/*********************************************/
+
+.activity {
+	font-size: 14pt;
+	color: #576CAA;
+}
+
+.idea-infos {
+  margin-top: 4%;
+  margin-bottom: -17%;
+}
+
+.event-infos {
+  margin-top: 4%;
+  margin-bottom: -17%;
+}
+
+table {
+  font-size: 13pt;
+  background-color: white;
+}
+
+legend {
+  font-size: 20pt;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.event-buttons {
+  padding-top: 26%;
+  height: 30%;
+}
+
+.event-buttons .btn {
+  font-size: 13pt;
+  margin-bottom: 20%;
+}
+
+.event-buttons .badge {
+  background-color: SteelBlue!important;
+  font-size: 11pt;
+  margin-left: 8px;
+  width: 26pt;
+  border-radius: 7px;
+}

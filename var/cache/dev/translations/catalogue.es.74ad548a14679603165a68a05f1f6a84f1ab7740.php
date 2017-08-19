@@ -106,6 +106,13 @@ $catalogue = new MessageCatalogue('es', array (
     'Account is disabled.' => 'La cuenta está deshabilitada.',
     'Account is locked.' => 'La cuenta está bloqueada.',
   ),
+  'messages' => 
+  array (
+    'registration' => 'inscripción',
+    'connection' => 'Connexión',
+    'event' => 'Proponer un evento',
+    'city' => 'Rennes',
+  ),
 ));
 
 $catalogueFr = new MessageCatalogue('fr', array (

@@ -1,8 +1,8 @@
-
 registration: "S'inscrire"
 connection: "Se connecter"
 event: "Ajout d'événement"
 city: "Rennes"
+
 
 #
 # $SQL['fr']['locale'] = "fr_FR";

@@ -128,6 +128,42 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\HomeController::returnHomeAction',  '_route' => 'app_home_returnhome_1',);
         }
 
+        // app_home_postevent
+        if (rtrim($pathinfo, '/') === '/postevent') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'app_home_postevent');
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::postEventAction',  '_route' => 'app_home_postevent',);
+        }
+
+        // app_home_registermember
+        if (rtrim($pathinfo, '/') === '/register') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'app_home_registermember');
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::registerMemberAction',  '_route' => 'app_home_registermember',);
+        }
+
+        // app_home_addcomment
+        if (rtrim($pathinfo, '/') === '/addcomment') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'app_home_addcomment');
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::addCommentAction',  '_route' => 'app_home_addcomment',);
+        }
+
+        // app_home_test
+        if (rtrim($pathinfo, '/') === '/test') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'app_home_test');
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::testAction',  '_route' => 'app_home_test',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

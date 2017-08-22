@@ -471,14 +471,4 @@ class Member
     {
         return $this->comments;
     }
-
-    /**
-     * Remove event
-     *
-     * @param \AppBundle\Entity\Event $event
-     */
-    public function removeEvent(\AppBundle\Entity\Event $event)
-    {
-        $this->events->removeElement($event);
-    }
 }

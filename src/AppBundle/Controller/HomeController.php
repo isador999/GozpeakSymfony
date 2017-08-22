@@ -68,7 +68,7 @@ class HomeController extends Controller
     // echo "Création événement: ".$event->getName();
     // echo "Evenement proposé par: ".$event->getOrganizer();
 
-    // $em = $this->getDoctrine()->getEntityManager();
+    // $em = $this->getDoctrine()->getManager();
     // $em->persist($event);
     // $em->flush();
 
@@ -82,6 +82,17 @@ class HomeController extends Controller
 
   }
 
+  /**
+  * @Route("/lastevents/")
+  */
+  public function lastEventsAction()
+  {
+    $em = $this->getDoctrine()->getManager();
+    $lastevents = $em->getRepository('AppBundle:Event')->getLastEvents();
+    dump($lastevents);
+    return $this->render('lastevents.html.twig', ['lastevents' => $lastevents]);
+
+ }
 
   /**
   * @Route("/register/")
@@ -102,7 +113,7 @@ class HomeController extends Controller
    echo "Pseudo ".$member->getPseudo();
    echo "adresse email: ".$member->getEmail();
 
-   $em = $this->getDoctrine()->getEntityManager();
+   $em = $this->getDoctrine()->getManager();
    $em->persist($member);
    $em->flush();
 
@@ -141,7 +152,7 @@ class HomeController extends Controller
     // $comment->setOrganizer($id);
 
 
-    $em = $this->getDoctrine()->getEntityManager();
+    $em = $this->getDoctrine()->getManager();
     $id = 2;
 
     $member = $this->getDoctrine()->getRepository('WmdWatchMyDeskBundle:Desk')->find($id);
@@ -172,9 +183,9 @@ class HomeController extends Controller
 
 
  /**
- * @Route("/test/")
+ * @Route("/addevents/")
  */
- public function testAction()
+ public function addEventsAction()
  {
 
   $em = $this->getDoctrine()->getManager();

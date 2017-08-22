@@ -10,4 +10,23 @@ namespace AppBundle\Repository;
  */
 class EventRepository extends \Doctrine\ORM\EntityRepository
 {
+
+  public function getLastEvents($limit = 2) {
+    $result = $this->getEntityManager()
+      ->createQuery('
+        SELECT
+            d
+        FROM
+            AppBundle:Event d
+        WHERE
+            d.organizer = :organizer_id
+        ORDER BY
+            d.id DESC
+    ')
+    ->setMaxResults($limit)
+    ->setParameter('organizer_id', '2')
+    ->getResult();
+
+    return $result;
+  }
 }

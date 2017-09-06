@@ -5,7 +5,6 @@ event: "Add event"
 city: "Rennes english"
 
 
-
 # // GENERAL
 # $generic['en']['what'][0] = "what is this ?";
 # $generic['en']['city'][0] = "Rennes";

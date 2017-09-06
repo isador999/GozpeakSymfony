@@ -1,13 +1,13 @@
-function height(bloc){
-	var hauteur;
-
-	if( typeof( window.innerWidth ) == 'number' )
-		hauteur = window.innerHeight;
-	else if( document.documentElement && document.documentElement.clientHeight )
-		hauteur = document.documentElement.clientHeight;
-
-	document.getElementById(bloc).style.height = hauteur+"px";
-}
+// function height(bloc){
+// 	var hauteur;
+//
+// 	if( typeof( window.innerWidth ) == 'number' )
+// 		hauteur = window.innerHeight;
+// 	else if( document.documentElement && document.documentElement.clientHeight )
+// 		hauteur = document.documentElement.clientHeight;
+//
+// 	document.getElementById(bloc).style.height = hauteur+"px";
+// }
 
 
 // To close slowly alert-success Bootstrap messages //
@@ -31,14 +31,14 @@ function escapeHtml(unsafe) {
  }
 
 
-function showCities () {
-	var list = document.getElementById("ZpeakCities");
-	if (list.style.display == "none"){
-	  list.style.display = "block";
-	}else{
-	  list.style.display = "none";
-	}
-}
+// function showCities () {
+// 	var list = document.getElementById("ZpeakCities");
+// 	if (list.style.display == "none"){
+// 	  list.style.display = "block";
+// 	}else{
+// 	  list.style.display = "none";
+// 	}
+// }
 
 
 /*$(document).ready(function() {*/

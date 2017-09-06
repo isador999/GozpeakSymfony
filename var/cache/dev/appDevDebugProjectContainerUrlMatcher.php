@@ -114,18 +114,49 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
-        // app_home_returnhome
-        if ($pathinfo === '/home') {
-            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::returnHomeAction',  '_route' => 'app_home_returnhome',);
-        }
-
-        // app_home_returnhome_1
-        if (rtrim($pathinfo, '/') === '') {
+        // app_home_lastevents
+        if (rtrim($pathinfo, '/') === '/lastevents') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'app_home_returnhome_1');
+                return $this->redirect($pathinfo.'/', 'app_home_lastevents');
             }
 
-            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::returnHomeAction',  '_route' => 'app_home_returnhome_1',);
+            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::lastEventsAction',  '_route' => 'app_home_lastevents',);
+        }
+
+        // event
+        if (0 === strpos($pathinfo, '/event') && preg_match('#^/event/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_event;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'event')), array (  '_controller' => 'AppBundle\\Controller\\HomeController::showEventAction',));
+        }
+        not_event:
+
+        // list
+        if (0 === strpos($pathinfo, '/list') && preg_match('#^/list/(?P<category>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_list;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'list')), array (  '_controller' => 'AppBundle\\Controller\\HomeController::listEventsAction',));
+        }
+        not_list:
+
+        // app_home_home
+        if ($pathinfo === '/home') {
+            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::HomeAction',  '_route' => 'app_home_home',);
+        }
+
+        // app_home_home_1
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'app_home_home_1');
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::HomeAction',  '_route' => 'app_home_home_1',);
         }
 
         // app_home_postevent
@@ -146,22 +177,25 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\HomeController::registerMemberAction',  '_route' => 'app_home_registermember',);
         }
 
-        // app_home_addcomment
-        if (rtrim($pathinfo, '/') === '/addcomment') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'app_home_addcomment');
+        if (0 === strpos($pathinfo, '/add')) {
+            // app_home_addcomment
+            if (rtrim($pathinfo, '/') === '/addcomment') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'app_home_addcomment');
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\HomeController::addCommentAction',  '_route' => 'app_home_addcomment',);
             }
 
-            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::addCommentAction',  '_route' => 'app_home_addcomment',);
-        }
+            // app_home_addevents
+            if (rtrim($pathinfo, '/') === '/addevents') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'app_home_addevents');
+                }
 
-        // app_home_test
-        if (rtrim($pathinfo, '/') === '/test') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'app_home_test');
+                return array (  '_controller' => 'AppBundle\\Controller\\HomeController::addEventsAction',  '_route' => 'app_home_addevents',);
             }
 
-            return array (  '_controller' => 'AppBundle\\Controller\\HomeController::testAction',  '_route' => 'app_home_test',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

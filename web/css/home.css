@@ -3,10 +3,19 @@
 
 
 /**** HOME ****/
-header {
+/*header {
   height: 61%;
   font-size: 20pt;
   margin-bottom: 5%;
+}*/
+
+.jumbotron {
+  background-color: #87CEFA;
+}
+
+.jumbotron a {
+
+  margin-right: 5%;
 }
 
 .activities {
@@ -25,13 +34,39 @@ header {
   margin-right: 4%;
 }*/
 
-#corpse a {
+/*#corpse a {
   color:rgb(34,78,126);
+}*/
+
+
+
+
+/* ### CAROUSEL */
+/*#zpeak_carousel {
+  background-color: #CECECE;
+  border-radius: 30px;
+  height: 630px;
+  margin-bottom: 3%;
+  margin-top: 2%;
 }
 
-.city-block {
-  height:20%;
-  margin-bottom: 4%;
+.carousel-page {
+  margin-top: 3%;
+}
+
+.carousel-control {
+  background-color: #CECECE;
+  border-radius: 30px;
+}
+
+.branding {
+  color: #16599C;
+}
+
+#brand-block {
+  height:10%;
+  color: #16599C;
+  margin-bottom: 2%;
 }
 
 .promote-block {
@@ -43,4 +78,4 @@ header {
 .promote-block img {
   min-width: 340px;
   max-width: 370px;
-}
+}*/

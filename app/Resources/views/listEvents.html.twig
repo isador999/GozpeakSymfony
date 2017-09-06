@@ -1,0 +1,14 @@
+<html>
+  <body>
+Derniers évenements :
+<br>
+<br>
+{% for event in events %}
+Evenement {{ event.category }} :  <br>
+  name : <a href="{{ path('event', {id: event.id}) }}"  <br>
+  Description : {{ event.description }}  <br>
+  <br>
+{% endfor %}
+
+  </body>
+</html>

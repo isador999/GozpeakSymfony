@@ -12,42 +12,95 @@ use AppBundle\Entity\Event;
 use AppBundle\Entity\EventComment;
 use AppBundle\Entity\Member;
 
+
 class HomeController extends Controller
 {
+  /**
+  * @Route("/lastevents/")
+  */
+  private function lastEventsAction()
+  {
+    // $em = $this->getDoctrine()->getManager();
+    // $lastevents = $em->getRepository('AppBundle:Event')->getLastEvents();
+
+    $em = $this->getDoctrine()->getManager();
+    $lastevents = $em->getRepository('AppBundle:Event')->findBy(
+      array('category'=>'run'),
+      array('createdAt'=>'desc'),
+      5,
+      0
+    );
+
+    return $lastevents;
+    // return $this->render('lastevents.html.twig', ['lastevents' => $lastevents]);
+  }
+
+
+  /**
+     * Display all details of an event
+     *
+     * @Route("/event/{id}", name="event")
+     * @Method({"GET"})
+     */
+  public function showEventAction($id) {
+    $em = $this->getDoctrine()->getManager()->getRepository('AppBundle:Event');
+    $event = $em->getEventByName($id);
+
+    // dump($event);
+    // die();
+
+    return $this->render('showEvent.html.twig', ['event' => $event]);
+  }
+
+
+  /**
+     * Display all events depending on category
+     *
+     * @Route("/list/{category}", name="list")
+     * @Method({"GET"})
+     */
+  public function listEventsAction($category) {
+
+    $em = $this->getDoctrine()->getManager()->getRepository('AppBundle:Event');
+    $events = $em->getSummaryEventsByCategory($category);
+
+    return $this->render('listEvents.html.twig', ['events' => $events]);
+  }
+
   /**
    * @Route("/home")
    * @Route("/")
    */
-  public function returnHomeAction(Request $request)
+  public function HomeAction(Request $request)
   {
-    $InitSession = new SessionInitController($request->server->get('HTTP_HOST'), $request->server->get('HTTPS'), $request->server->get('HTTP_ACCEPT_LANGUAGE'));
-    $logged = $InitSession->checkLoginStatus();
-    $city = $this->get('translator')->trans('city');
+    // $InitSession = new SessionInitController($request->server->get('HTTP_HOST'), $request->server->get('HTTPS'), $request->server->get('HTTP_ACCEPT_LANGUAGE'));
+    // $logged = $InitSession->checkLoginStatus();
+    // $city = $this->get('translator')->trans('city');
+
+    $InitSession = new SessionInitController();
+    $baseURL = $InitSession->setBaseURL($request->server->get('HTTP_HOST'), $request->server->get('HTTPS'));
+
+    $em = $this->getDoctrine()->getManager()->getRepository('AppBundle:Event');
+    $last_event = $em->getLastEvent(1);
+
+    // dump($last_event);
+    // die();
+
+    $registration = $this->get('translator')->trans('registration');
+    $connection = $this->get('translator')->trans('connection');
+    $event = $this->get('translator')->trans('event');
+
+    // $lastevents = $this->lastEventsAction();
 
     return $this->render('home.html.twig', array(
-      'baseURL' => $InitSession->baseURL,
-      'promote_text' => "LA référence des langues étrangères à Rennes",
-      'registration' => "registration",
-      'connection' => "connection",
-      'event' => "event",
-      'navbar_template' => 'header-'.$logged.'.html.twig',
-      // 'city' => $generic[$_SESSION['language']]['city'][0]['name'],
-      'city' => $city,
-      'modals' => array("modal-navbar.php", "modal-footer.php", 'modal-postevent-'.$logged.'.php'),
-      'footer_text' => array('title' => "FooterTitle",
-                              'contact' => "Contact",
-                              'premium' => "Premium",
-                              'what' => "C'est quoi Gozpeak",
-                              'socials' => "Facebook"
-                            ),
-      'footer_titles' => array('contact' => "Contact",
-                            'premium' => "Premium",
-                            'what' => "What is it"
-                          )
-
-    ));
+      'baseURL' => $baseURL,
+      'registration' => $registration,
+      'connection' => $connection,
+      'event' => $event,
+      'lastevent' => $last_event
+      )
+    );
   }
-
 
 
  /**
@@ -82,17 +135,7 @@ class HomeController extends Controller
 
   }
 
-  /**
-  * @Route("/lastevents/")
-  */
-  public function lastEventsAction()
-  {
-    $em = $this->getDoctrine()->getManager();
-    $lastevents = $em->getRepository('AppBundle:Event')->getLastEvents();
-    dump($lastevents);
-    return $this->render('lastevents.html.twig', ['lastevents' => $lastevents]);
 
- }
 
   /**
   * @Route("/register/")
@@ -198,7 +241,7 @@ class HomeController extends Controller
   $event = new Event();
   $event->setCategory("run");
   $event->setName("Sortie Piscine");
-  $event->setPlace("Piscine St-Georges");
+  $event->setPlace("Piscine St Georges");
   $event->setDescription("Je propose une sortie piscine... etc... ");
   $event->setPlannedAt(new \DateTime('now'));
   $event->setSpokenLanguage("espagnol");
@@ -209,8 +252,8 @@ class HomeController extends Controller
 
   $event2 = new Event();
   $event2->setCategory("art");
-  $event2->setName("Beaux-arts");
-  $event2->setPlace("Musée des beaux-arts, République");
+  $event2->setName("Beaux arts");
+  $event2->setPlace("Musée des beaux arts, République");
   $event2->setDescription("Je propose une visite du musée ... etc... ");
   $event2->setPlannedAt(new \DateTime('now'));
   $event2->setSpokenLanguage("italien");

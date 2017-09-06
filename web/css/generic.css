@@ -23,17 +23,17 @@
 
 
 html, body {
-	background:url(../images/backgrounds/bg_lowcontrast.png) repeat scroll 0 0;
+	/*background:url(../images/backgrounds/bg_lowcontrast.png) repeat scroll 0 0;*/
   font-family: 'noteworthy';
   height: 100%;
   min-width: 500px;
 }
 
 
-.corpse {
+/*.corpse {
   margin-left: 3.5%;
   margin-right: 3.5%;
-}
+}*/
 
 body a {
   color: #0086bf;

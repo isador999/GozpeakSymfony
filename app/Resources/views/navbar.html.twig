@@ -1,11 +1,9 @@
-{% extends 'maintemplate.html.twig' %}
 
-{% block navbar %}
 <nav role="navigation" class="navbar navbar-default navbar-inverse">
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-offset-1 col-lg-2 col-md-offset-4 col-sm-offset-4 col-sm-4">
-        <a href="{{ baseURL }}" title="GoZpeak!"><img src="{{ asset('images/gozpeak_small.png') }}" alt="GoZpeak" /></a>
+        <a href="{{ url('home') }}" title="GoZpeak!"><img src="{{ asset('images/gozpeak_small.png') }}" alt="GoZpeak" /></a>
       </div>
     <!-- <div class="navbar-header row col-xs-5 visible-xs">
       <a href="index.php?page=home"><img src="views/images/gozpeak_small.png" alt="GoZpeak" title="GoZpeak!" /></a>
@@ -64,5 +62,3 @@
     </div>
   </div>
 </nav>
-
-{% endblock %}

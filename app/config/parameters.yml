@@ -1,6 +1,6 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_host: 127.0.0.1
+    database_host: mysql
     database_port: null
     database_name: symfozpeak
     database_user: root
@@ -10,4 +10,3 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: bd0fb67e38d9ac88752cb4b281672b9d15ad8c99
-    

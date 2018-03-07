@@ -1,3 +1,10 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Accueil{% endblock %}
+
+{% block stylesheets %}{{ parent() }} {% endblock %}
+
+{% block body %}
 
 <nav role="navigation" class="navbar navbar-default navbar-inverse">
   <div class="container-fluid">
@@ -62,3 +69,4 @@
     </div>
   </div>
 </nav>
+{% endblock %}

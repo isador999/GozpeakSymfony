@@ -2,10 +2,10 @@
     <div class="row text-center">
       <div class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10">
         <div id="titlefooter">
-          <h4 class="visible-lg" style="padding-top:1%;"><strong><?php echo $footer[$_SESSION['language']]['title']; ?></strong></h4>
-          <h4 class="visible-md" style="padding-top:1.4%;"><strong><?php echo $footer[$_SESSION['language']]['title']; ?></strong></h4>
-          <h4 class="visible-sm" style="padding-top:1.8%;"><strong><?php echo $footer[$_SESSION['language']]['title']; ?></strong></h4>
-          <h4 class="visible-xs" style="padding-top:2.2%;"><strong><?php echo $footer[$_SESSION['language']]['title']; ?></strong></h4>
+          <h4 class="visible-lg" style="padding-top:1%;"><strong>{% trans %}footer.title{% endtrans %}</strong></h4>
+          <h4 class="visible-md" style="padding-top:1.4%;"><strong>{% trans %}footer.title{% endtrans %}</strong></h4>
+          <h4 class="visible-sm" style="padding-top:1.8%;"><strong>{% trans %}footer.title{% endtrans %}</strong></h4>
+          <h4 class="visible-xs" style="padding-top:2.2%;"><strong>{% trans %}footer.title{% endtrans %}</strong></h4>
         </div>
       </div>
     </div>
@@ -16,13 +16,13 @@
         <div class="row">
 		      <div class="col-lg-offset-5 col-md-offset-5 col-sm-offset-3 col-xs-offset-3 text-left">
 			      <div class="foot-link">
-			        <a data-toggle="modal" data-target="#modalContact" href="#" title="<?php echo $footer[$_SESSION['language']]['contact']['title']; ?>"><span class="fa fa-envelope">&nbsp;&nbsp;&nbsp;<?php echo $footer[$_SESSION['language']]['contact']['text']; ?></span></a>
+			        <a data-toggle="modal" data-target="#modalContact" href="#" title="{% trans %}footer.contact{% endtrans %}"><span class="fa fa-envelope">&nbsp;&nbsp;&nbsp;{% trans %}footer.contact{% endtrans %}</span></a>
 			      </div>
 			      <div class="foot-link">
-			        <a href="#" title="<?php echo $footer[$_SESSION['language']]['premium']['title']; ?>"><span class="fa fa-star">&nbsp;&nbsp;&nbsp;<?php echo $footer[$_SESSION['language']]['premium']['text']; ?></span></a>
+			        <a href="#" title="{% trans %}footer.premium{% endtrans %}"><span class="fa fa-star">&nbsp;&nbsp;&nbsp;{% trans %}footer.premium{% endtrans %}</span></a>
 			      </div>
 			      <div class="foot-link">
-			        <a data-toggle="modal" data-target="#modalWhat" href="#" title="<?php echo $generic[$_SESSION['language']]['what'][0]['title']; ?>"><span class="fa fa-question-circle">&nbsp;&nbsp;&nbsp;<?php echo $generic[$_SESSION['language']]['what'][0]['text']; ?></span></a>
+			        <a data-toggle="modal" data-target="#modalWhat" href="#" title="{% trans %}footer.what{% endtrans %}"><span class="fa fa-question-circle">&nbsp;&nbsp;&nbsp;{% trans %}footer.what{% endtrans %}</span></a>
 			      </div>
 		      </div>
         </div>
@@ -34,7 +34,7 @@
           <?php echo $footer[$_SESSION['language']]['socials']['desc'];?>
         </div>
         <ul>
-          <li><a href="https://www.facebook.com/gozpeak" title="Page Facebook"> Facebook </a></li>
+          <li><a href="https://www.facebook.com/gozpeak" title="{% trans %}footer.facebook{% endtrans %}"> {% trans %}footer.facebook{% endtrans %} </a></li>
         </ul>
       </div>
     </div>

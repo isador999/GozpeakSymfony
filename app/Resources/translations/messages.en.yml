@@ -4,6 +4,12 @@ connection: "Connection"
 event: "Add event"
 city: "Rennes english"
 
+footer:
+  title: "Informations"
+  contact: "Contact Us"
+  premium: "Become premium"
+  what: "What is Gozpeak ?"
+  facebook: "Our Facebook page"
 
 # // GENERAL
 # $generic['en']['what'][0] = "what is this ?";

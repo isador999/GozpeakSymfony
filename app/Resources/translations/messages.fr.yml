@@ -3,6 +3,12 @@ connection: "Se connecter"
 event: "Ajout d'événement"
 city: "Rennes"
 
+footer:
+  title: "Informations"
+  contact: "Contactez-nous"
+  premium: "Devenir premium"
+  what: "Gozpeak c'est quoi ?"
+  facebook: "Notre page Facebook"
 
 #
 # $SQL['fr']['locale'] = "fr_FR";

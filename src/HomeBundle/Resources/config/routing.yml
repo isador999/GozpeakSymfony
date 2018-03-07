@@ -1,0 +1,5 @@
+home:
+    prefix:   /
+    resource: "@HomeBundle/Controller/"
+    type: annotation
+    # defaults: { _controller: HomeBundle:Home:home }

@@ -1,0 +1,99 @@
+{% extends 'navbar.html.twig' %}
+
+
+{% block body %}
+{{ parent() }}
+<div class="container-fluid">
+	<div class="jumbotron">
+		<h2> Association Gozpeak à Rennes </h2>
+		<p>
+			Cultivez les langues étrangères en pratiquant !
+ 		</p>
+
+		<div>
+			<a href="#" class="btn btn-lg btn-success"> En savoir plus </a>
+			<a href="#" class="btn btn-lg btn-primary"> Adhérer à l'association </a>
+		</div>
+	</div>
+</div>
+
+
+	<header>
+	<!-- <div class="row">
+		<div id="zpeak_carousel" class="carousel slide" data-ride="carousel">
+
+			<ol class="carousel-indicators">
+				<li data-target="#zpeak_carousel" data-slide-to="0" class="active"></li>
+				<li data-target="#zpeak_carousel" data-slide-to="1"></li>
+				<li data-target="#zpeak_carousel" data-slide-to="2"></li>
+			</ol>
+
+			<div class="carousel-inner">
+				<div class="item active">
+					<div class="carousel-page">
+						<img src="views/images/gozpeak_small.png" class="img-responsive" style="margin: 0px auto;" />
+						<div class="branding text-center">
+					 		<?php echo "La référence des langues étrangères à Rennes !" ?>
+						</div>
+						<img src="views/images/menu_clara.jpg" class="img-responsive img-rounded" style="margin:0px auto; height: 430px; max-height: 600px;"  />
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="carousel-page">
+						<img src="views/images/sejour.jpeg" class="img-responsive img-rounded" style="margin:0px auto; height: 520px; max-height: 600px"  />
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="carousel-page">
+						<img src="views/images/cartel.jpg" class="img-responsive img-rounded" style="margin:0px auto; height: 520px; max-height: 600px"  />
+					</div>
+				</div>
+
+			</div>
+
+			<a class="left carousel-control" href="#zpeak_carousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#zpeak_carousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+	</div> -->
+
+	<div class="row promote-block">
+		<div class="col-lg-offset-1 col-lg-4 col-md-offset-2 col-md-6 col-sm-offset-1 col-sm-3">
+			<div>
+				 <iframe width="600" height="440" src="https://www.youtube.com/embed/cXF3-OzHoYU"></iframe>
+		 </div>
+	 </div>
+
+		<div class="col-lg-offset-2 col-lg-4 col-md-offset-1 col-md-10 col-sm-12">
+		 <div>
+			 <h3> Participez aux événements proposés par Gozpeak et proposez vos propres sorties linguistiques  ! </h3>
+		 </div>
+
+		 <div>
+			 Prochain événement Gozpeak :
+
+		 </div>
+		</div>
+	</div>
+</header>
+
+<!-- LG and MD -->
+<div id="app" class="row text-center activities" style="height:35%;">
+	<zpeak-categories
+		v-for="item in categoriesList"
+		v-bind:category="item"
+		v-bind:key="item.id">
+	</zpeak-categories>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript" src="{{ asset('js/vue.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/vue-instance.js') }}"></script>
+{% endblock %}

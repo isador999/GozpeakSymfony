@@ -1,8 +1,25 @@
+navbar:
+  registration: "Subscribe"
+  connection: "Connection"
+  event: "Add event"
+  city: "Rennes english"
 
-registration: "Subscribe"
-connection: "Connection"
-event: "Add event"
-city: "Rennes english"
+home:
+  jumbotron:
+    head: "Association Gozpeak in Rennes"
+    slogan: "Cultivate the foreign languages by practising"
+    membership: "Join the association"
+    more: "Learn more"
+
+  body:
+    slogan: "Participate in the events proposed by Gozpeak, and propose your own linguistic exits"
+    nextevent: "Next Gozpeak event"
+
+activities:
+  art: "Have a practice and become cultivated"
+  run: "Have a practice and go in for sport"
+  eat: "Have a practice and eat"
+  party: "Have a practice and have a drink"
 
 footer:
   title: "Informations"

@@ -54,19 +54,40 @@
     <!-- NAV TABS BUTTONS -->
       <div class="col-lg-offset-1 col-lg-8 col-md-12 col-sm-12 col-xs-6">
         <ul class="nav nav-tabs">
-          <li class="col-lg-3 col-md-4 col-sm-3 col-xs-7 text-right btn navbar-btn"><a title="<?php echo $headband[$_SESSION['language']]['registration']['title']; ?>" data-toggle="modal" data-target="#modalInscription"><span class="glyphicon glyphicon-user"> {{ registration }} </span></a> </li>
-          <li class="col-lg-4 col-md-4 col-sm-4 col-xs-8 text-right btn navbar-btn"><a title="<?php echo $headband[$_SESSION['language']]['connection']['title']; ?>" data-toggle="modal" data-target="#modalConnection"><span class="glyphicon glyphicon-log-in"> {{ connection }} </span></a> </li>
-          <li class="col-lg-5 col-md-4 col-sm-5 col-xs-10 text-right btn navbar-btn"><a title="<?php echo $headband[$_SESSION['language']]['event']['title']; ?>" data-toggle="modal" data-target="#modalSelectQueryNotLogged"><span class="glyphicon glyphicon-calendar"> {{ event }} </span></a> </li>
+          <li class="col-lg-3 col-md-4 col-sm-3 col-xs-7 text-right btn navbar-btn"><a title="{% trans %}navbar.registration{% endtrans %}" data-toggle="modal" data-target="#modalInscription"><span class="glyphicon glyphicon-user"> {% trans %}navbar.registration{% endtrans %} </span></a> </li>
+          <li class="col-lg-4 col-md-4 col-sm-4 col-xs-8 text-right btn navbar-btn"><a title="{% trans %}navbar.connection{% endtrans %}" data-toggle="modal" data-target="#modalConnection"><span class="glyphicon glyphicon-log-in"> {% trans %}navbar.connection{% endtrans %} </span></a> </li>
+          <li class="col-lg-5 col-md-4 col-sm-5 col-xs-10 text-right btn navbar-btn"><a title="{% trans %}navbar.event{% endtrans %}" data-toggle="modal" data-target="#modalSelectQueryNotLogged"><span class="glyphicon glyphicon-calendar"> {% trans %}navbar.event{% endtrans %} </span></a> </li>
         </ul>
       </div>
       <!-- <div class="nav navbar-nav pull-right col-xs-5 pull-left row visible-xs">
         <ul class="nav" style="padding-top:1%;">
-          <li class="col-xs-offset-1 pull-left btn navbar-btn"><a title="<?php #echo $headband[$_SESSION['language']]['registration']['title']; ?>" data-toggle="modal" data-target="#modalInscription"><span class="glyphicon glyphicon-user"> <?php #echo $headband[$_SESSION['language']]['registration']['text']; ?></span></a></li>
-          <li class="col-xs-offset-1 pull-left btn navbar-btn"><a title="<?php #echo $headband[$_SESSION['language']]['connection']['title']; ?>" data-toggle="modal" data-target="#modalConnection"><span class="glyphicon glyphicon-log-in"> <?php #echo $headband[$_SESSION['language']]['connection']['text']; ?></span></a></li>
-          <li class="col-xs-offset-1 pull-left btn navbar-btn"><a title="<?php #echo $headband[$_SESSION['language']]['event']['title']; ?>" data-toggle="modal" data-target="#modalSelectQueryNotLogged"><span class="glyphicon glyphicon-calendar"> <?php #echo $headband[$_SESSION['language']]['event']['text']; ?> </span></a></li>
+          <li class="col-xs-offset-1 pull-left btn navbar-btn"><a title="{% trans %}navbar.registration{% endtrans %}" data-toggle="modal" data-target="#modalInscription"><span class="glyphicon glyphicon-user"> {% trans %}navbar.registration{% endtrans %} </span></a></li>
+          <li class="col-xs-offset-1 pull-left btn navbar-btn"><a title="{% trans %}navbar.connection{% endtrans %}" data-toggle="modal" data-target="#modalConnection"><span class="glyphicon glyphicon-log-in"> {% trans %}navbar.connection{% endtrans %} </span></a></li>
+          <li class="col-xs-offset-1 pull-left btn navbar-btn"><a title="{% trans %}navbar.event{% endtrans %}" data-toggle="modal" data-target="#modalSelectQueryNotLogged"><span class="glyphicon glyphicon-calendar"> {% trans %}navbar.event{% endtrans %} </span></a></li>
         </ul>
       </div> -->
     </div>
   </div>
 </nav>
+{% endblock %}
+
+{% block javascripts %}
+  <!-- BOOTSTRAP SCRIPT -->
+  <script type="text/javascript" src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/jquery-ui.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+  <!-- <script type="text/javascript" src="{{ asset('js/myScript.js') }}"></script> -->
+  <script type="text/javascript" src="{{ asset('js/formValidation.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/bootstrap-formValidation.min.js') }}"></script>
+
+  <!-- PERSONAL SCRIPTS -->
+  <script type="text/javascript" async src="{{ asset('js/jquery.subscribe.js') }}"></script>
+  <script type="text/javascript" async src="{{ asset('js/jquery.connect.js') }}"></script>
+  <script type="text/javascript" async src="{{ asset('js/jquery.forgotpass.js') }}"></script>
+  <script type="text/javascript" async src="{{ asset('js/jquery.contact.js') }}"></script>
+  <!-- <script type="text/javascript" async src="{{ asset('js/jquery.listmembers.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.fr.js') }}"></script> -->
+  <!-- <script type="text/javascript" src="{{ asset('js/typeahead.bundle.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/typeahead-scroll.js') }}"></script> -->
 {% endblock %}

@@ -1,6 +1,6 @@
 Vue.component('zpeak-categories', {
     props: ['category'],
-    template: '<div class="col-lg-3 col-md-3" style="padding-top: 20px;"><h3> <a :title="category.text" :href="category.url" @mouseover="imgIncrease(category.name)" @mouseout="imgReduce(category.name)"><span><img style="width:220px;" :id="category.name" :src="category.img" :alt="category.name"> </span></a></h3> <span> {{ category.text }} </span> </div>',
+    template: '<div class="col-lg-3 col-md-3" style="padding-top: 20px;"><h3> <a :title="category.text" :href="category.url" @mouseover="imgIncrease(category.name)" @mouseout="imgReduce(category.name)"><span><img style="width:220px;" :id="category.name" :src="category.img" :alt="category.name"> </span></a></h3> <span> {% trans %}{{ category.text }}{% endtrans %} </span> </div>',
     methods: {
        imgIncrease: function(Id) {
         $('#'+Id).animate({ 'width': '+=30'}, 100);

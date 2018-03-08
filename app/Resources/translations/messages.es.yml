@@ -1,7 +1,25 @@
-registration: "inscripción"
-connection: "Connexión"
-event: "Proponer un evento"
-city: "Rennes"
+navbar:
+  registration: "inscripción"
+  connection: "Connexión"
+  event: "Proponer un evento"
+  city: "Rennes"
+
+home:
+  jumbotron:
+    head: "Association Gozpeak en Rennes"
+    slogan: "Cultive las lenguas extranjeras practicando"
+    membership: "Adherirse a la asociación"
+    more: "¿Saber más?"
+
+  body:
+    slogan: "Participe en los acontecimientos propuestos por Gozpeak, y proponga sus propias salidas lingüísticas"
+    nextevent: "El próximo evento Gozpeak"
+
+activities:
+  art: "PPracticar y cultivarse"
+  run: "Practicar y hacer deporte"
+  eat: "Pratiquer y comer"
+  party: "practicar y beber un vaso"
 
 footer:
   title: "Informaciones"

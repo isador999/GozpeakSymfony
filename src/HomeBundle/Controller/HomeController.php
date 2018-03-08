@@ -44,19 +44,10 @@ class HomeController extends Controller
 
   public function FooterAction()
   {
-    $footer = $this->get('translator');
-    //
-    // $contact = $trans->trans('footer.contact_us');
-    // $premium = $trans->trans('footer.premium');
-    // $what = $trans->trans('footer.what_is_it');
-    // $fb = $trans->trans('footer.facebook');
     $year = date("Y");
 
-    // $footer_fields = [1 => $contact, 2 => $premium, 3 => $what, 4 => $fb, 5 => $year];
-
     return $this->render('footer.html.twig', array(
-        'year' => $year,
-        'footer' => $footer
+        'year' => $year
       )
     );
   }

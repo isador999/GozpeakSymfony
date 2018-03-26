@@ -82,18 +82,54 @@
 	</div>
 </header>
 
+<div id="activities" class="row text-center activities">
+	<zpeakimage text="{{ art_text }}" type="art"></zpeakimage>
+</div>
+
+<!-- <div id="app" class="container">
+	<message title="My Component title" body="Lorem ipsum dry"></message>
+</div> -->
+
 <!-- LG and MD -->
-<div id="app" class="row text-center activities" style="height:35%;">
+<!-- <div id="app" data-text="run" class="row text-center activities" style="height:35%;">
 	<zpeak-categories
 		v-for="item in categoriesList"
 		v-bind:category="item"
 		v-bind:key="item.id">
 	</zpeak-categories>
-</div>
+</div> -->
+
 {% endblock %}
 
 {% block javascripts %}
 	{{ parent() }}
 	<script type="text/javascript" src="{{ asset('js/vue.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/vue-instance.js') }}"></script>
+
+	<script type="text/javascript">
+
+		Vue.component('zpeakimage', {
+			delimiters: ['${', '}'],
+			props: ['text', 'type'],
+			template: '<div class="col-lg-3 col-md-3" style="padding-top: 20px;"><h3><a title="${text}" href="#"><span> <img style="width:220px;" alt="Image"> </span></a></h3><span>${text}</span></div>'
+		});
+
+		new Vue({
+			el: '#activities'
+		});
+	</script>
+
+	<!-- <script>
+		var app = new Vue({
+			delimiters: ['${', '}'],
+			el: '#app',
+			data: {
+				runtext: '',
+				title: "JS title"
+
+			},
+				beforeMount: function() {
+					this.runtext = this.$el.attributes['data-run'].value;
+				}
+		})
+	</script> -->
 {% endblock %}

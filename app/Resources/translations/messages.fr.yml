@@ -28,6 +28,7 @@ footer:
   premium: "Devenir premium"
   what: "Gozpeak c'est quoi ?"
   facebook: "Notre page Facebook"
+  legalnotice: "Mentions légales"
 
 #
 # $SQL['fr']['locale'] = "fr_FR";

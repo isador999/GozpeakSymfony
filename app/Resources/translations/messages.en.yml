@@ -27,6 +27,7 @@ footer:
   premium: "Become premium"
   what: "What is Gozpeak ?"
   facebook: "Our Facebook page"
+  legalnotice: "Legal Notice"
 
 # // GENERAL
 # $generic['en']['what'][0] = "what is this ?";

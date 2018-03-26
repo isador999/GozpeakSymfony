@@ -27,17 +27,22 @@ class HomeController extends Controller
 
     // dump('toto');
     // die();
-    $registration = $this->get('translator')->trans('registration');
-    $connection = $this->get('translator')->trans('connection');
-    $event = $this->get('translator')->trans('event');
+    $trans = $this->get('translator');
+    $registration = $trans->trans('registration');
+    $connection = $trans->trans('connection');
+    $event = $trans->trans('event');
 
+    $art_text = $trans->trans('activities.art');
+    $run_text = $trans->trans('activities.run');
 
     // $lastevents = $this->lastEventsAction();
 
     return $this->render('HomeBundle::home.html.twig', array(
       'registration' => $registration,
       'connection' => $connection,
-      'event' => $event
+      'event' => $event,
+      'art_text' => $art_text,
+      'run_text' => $run_text,
       )
     );
   }

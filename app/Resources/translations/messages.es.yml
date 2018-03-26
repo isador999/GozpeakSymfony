@@ -27,6 +27,7 @@ footer:
   premium: "Devenir miembro premium"
   what: "Gozpeak ¿qué es?"
   facebook: "Nuestra página Facebook"
+  legalnotice: "Aviso Legal"
 
 # $geseric['es']['what'][0] = " ¿ Que es eso ? ";
 # $geseric['es']['city'][0] = "Rennes";

@@ -83,7 +83,7 @@
 </header>
 
 <div id="activities" class="row text-center activities">
-	<zpeakimage text="{{ art_text }}" type="art"></zpeakimage>
+	<zpeakimage type="art" text="{{ art_text }}" img="{{asset('images/art.png')}}" target="/list/art"></zpeakimage>
 </div>
 
 <!-- <div id="app" class="container">
@@ -98,8 +98,8 @@
 		v-bind:key="item.id">
 	</zpeak-categories>
 </div> -->
-
 {% endblock %}
+
 
 {% block javascripts %}
 	{{ parent() }}
@@ -109,8 +109,16 @@
 
 		Vue.component('zpeakimage', {
 			delimiters: ['${', '}'],
-			props: ['text', 'type'],
-			template: '<div class="col-lg-3 col-md-3" style="padding-top: 20px;"><h3><a title="${text}" href="#"><span> <img style="width:220px;" alt="Image"> </span></a></h3><span>${text}</span></div>'
+			props: ['type', 'text', 'img', 'target'],
+			template: '<div class="col-lg-3 col-md-3" style="padding-top: 20px;"><h3><a :title="text" :href="target" @mouseover="imgIncrease(type)" @mouseout="imgReduce(type)"><span> <img style="width:220px;" :id="type" :src="img" :alt="text"> </span></a></h3><span> ${text} </span></div>',
+			methods: {
+				 imgIncrease: function(Id) {
+					$('#'+Id).animate({ 'width': '+=30'}, 100);
+				},
+				imgReduce: function(Id) {
+					$('#'+Id).animate({ 'width': '-=30'}, 100);
+				}
+			}
 		});
 
 		new Vue({

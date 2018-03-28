@@ -34,6 +34,8 @@ class HomeController extends Controller
 
     $art_text = $trans->trans('activities.art');
     $run_text = $trans->trans('activities.run');
+    $eat_text = $trans->trans('activities.eat');
+    $party_text = $trans->trans('activities.party');
 
     // $lastevents = $this->lastEventsAction();
 
@@ -43,6 +45,8 @@ class HomeController extends Controller
       'event' => $event,
       'art_text' => $art_text,
       'run_text' => $run_text,
+      'eat_text' => $eat_text,
+      'party_text' => $party_text,
       )
     );
   }

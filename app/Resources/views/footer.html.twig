@@ -1,11 +1,13 @@
+  {% include 'modals/modal-footer.html.twig' %}
+
   <div class="container-fluid">
     <div class="row text-center">
       <div class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10">
         <div id="titlefooter">
-          <h4 class="visible-lg" style="padding-top:1%;"><strong>{% trans %}footer.title{% endtrans %}</strong></h4>
-          <h4 class="visible-md" style="padding-top:1.4%;"><strong>{% trans %}footer.title{% endtrans %}</strong></h4>
-          <h4 class="visible-sm" style="padding-top:1.8%;"><strong>{% trans %}footer.title{% endtrans %}</strong></h4>
-          <h4 class="visible-xs" style="padding-top:2.2%;"><strong>{% trans %}footer.title{% endtrans %}</strong></h4>
+          <!-- <h4 class="visible-lg" style="padding-top:1%;"><strong>{% trans %}footer.title{% endtrans %}</strong></h4> -->
+          <h4 style="padding-top:1.3%;"><strong>{% trans %}footer.title{% endtrans %}</strong></h4>
+          <!-- <h4 class="visible-sm" style="padding-top:1.8%;"><strong>{% trans %}footer.title{% endtrans %}</strong></h4>
+          <h4 class="visible-xs" style="padding-top:2.2%;"><strong>{% trans %}footer.title{% endtrans %}</strong></h4> -->
         </div>
       </div>
     </div>
@@ -28,11 +30,9 @@
         </div>
 	    </div>
 
+
       <!-- SOCIAL BUTTONS : LG, MD and SM -->
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" style="padding:1%;">
-        <div class="visible-lg visible-md">
-          <?php echo $footer[$_SESSION['language']]['socials']['desc'];?>
-        </div>
         <ul>
           <li><a href="https://www.facebook.com/gozpeak" title="{% trans %}footer.facebook{% endtrans %}"> {% trans %}footer.facebook{% endtrans %} </a></li>
           <li><a href="#" title="{% trans %}footer.legalnotice{% endtrans %}"> {% trans %}footer.legalnotice{% endtrans %}</a></li>

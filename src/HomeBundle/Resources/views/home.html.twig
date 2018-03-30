@@ -5,14 +5,21 @@
 {{ parent() }}
 <div class="container-fluid">
 	<div class="jumbotron">
-		<h2> {% trans %}home.jumbotron.head{% endtrans %} </h2>
-		<p>
-			{% trans %}home.jumbotron.slogan{% endtrans %}
- 		</p>
+		<div class="col-5 offset-1">
+			<h2> {% trans %}home.jumbotron.head{% endtrans %} </h2>
+			<p>
+				{% trans %}home.jumbotron.slogan{% endtrans %}
+ 			</p>
 
-		<div>
-		<a href="#" class="btn btn-lg btn-primary"> {% trans %}home.jumbotron.membership{% endtrans %} </a>
-			<a href="#" class="btn btn-lg btn-success"> {% trans %}home.jumbotron.more{% endtrans %} </a>
+			<div>
+				<a href="#" type="button" class="link btn-primary btn-lg">
+					{% trans %}home.jumbotron.membership{% endtrans %}
+				</a>
+
+				<a href="#" type="button" class="link btn-success btn-lg">
+					{% trans %}home.jumbotron.more{% endtrans %}
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
@@ -62,14 +69,16 @@
 		</div>
 	</div> -->
 
-	<div class="row promote-block">
-		<div class="col-lg-offset-1 col-lg-4 col-md-offset-2 col-md-6 col-sm-offset-1 col-sm-3">
+	<div class="row justify-content-center promote-block">
+		<!-- <div class="col-lg-offset-1 col-lg-4 col-md-offset-2 col-md-6 col-sm-offset-1 col-sm-3"> -->
+		<div class="col-5">
 			<div>
 				 <iframe width="600" height="440" src="https://www.youtube.com/embed/cXF3-OzHoYU"></iframe>
 		 </div>
 	 </div>
 
-		<div class="col-lg-offset-2 col-lg-4 col-md-offset-1 col-md-10 col-sm-12">
+	 <!-- <div class="col-lg-offset-2 col-lg-4 col-md-offset-1 col-md-10 col-sm-12"> -->
+		<div class="col-5">
 		 <div>
 			 <h3> {% trans %}home.body.slogan{% endtrans %}</h3>
 		 </div>
@@ -82,12 +91,24 @@
 	</div>
 </header>
 
-<div id="activities" class="row text-center activities">
+<div id="activities" class="row text-center justify-content-center activities">
 	<zpeakimage type="art" text="{{ art_text }}" img="{{asset('images/art.png')}}" target="/list/art"></zpeakimage>
 	<zpeakimage type="run" text="{{ run_text }}" img="{{asset('images/run.png')}}" target="/list/run"></zpeakimage>
 	<zpeakimage type="eat" text="{{ eat_text }}" img="{{asset('images/eat.png')}}" target="/list/eat"></zpeakimage>
 	<zpeakimage type="party" text="{{ party_text }}" img="{{asset('images/party.png')}}" target="/list/party"></zpeakimage>
 </div>
+
+<style>
+	.fade-enter-active, .fade-leave-active {
+		transition: 1s;
+	}
+
+	.fade-enter, .fade-leave-active {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+</style>
+
 {% endblock %}
 
 
